@@ -1,12 +1,13 @@
 <div align="center">
-    [<h1>powershell</h1>][website-url]
-</div>
+
+[<h1>powershell</h1>][website-url]
 
 [![License][license-badge]][license-url]
 [![Website][website-badge]][website-url]
 [![Build Status][build-badge]][latest-url]
 
 A little page for me to learn about PowerShell, put my scripts, and build a cheatsheet of sorts. Built with Hugo.
+</div>
 
 ## Usage
 
