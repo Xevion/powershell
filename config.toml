@@ -1,5 +1,4 @@
-#baseURL = 'https://xevion.github.io/   '
-baseURL = ''
+baseURL = 'https://xevion.github.io/powershell'
 languageCode = 'en-us'
 title = 'Powershell by Xevion'
 paginate = 5
