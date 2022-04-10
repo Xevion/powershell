@@ -11,9 +11,13 @@ A little page for me to learn about PowerShell, put my scripts, and build a chea
 
 ## Usage
 
+This application can be served for local develop using
+
 ```bash
 hugo serve
 ```
+
+but it will also automatically deploy to [xevion.github.io][website-url] when any commits hit `master`.
 
 [repo-url]: https://github.com/Xevion/powershell/
 [website-url]: https://xevion.github.io/powershell/
