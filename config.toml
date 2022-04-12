@@ -1,4 +1,4 @@
-baseURL = 'https://xevion.github.io/powershell'
+baseURL = 'https://powershell.xevion.dev/'
 languageCode = 'en-us'
 title = 'Powershell by Xevion'
 paginate = 5
@@ -80,7 +80,7 @@ missingBackButtonLabel = "Back to home page"
 
 [languages.en.params.logo]
 logoText = "Powershell"
-logoHomeLink = "/powershell/"
+logoHomeLink = "/"
 
 [languages.en.menu]
 [[languages.en.menu.main]]
