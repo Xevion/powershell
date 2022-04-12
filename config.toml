@@ -22,7 +22,7 @@ showLanguageSelector = false
 fullWidthTheme = false
 
 # center theme with default width
-centerTheme = false
+centerTheme = true
 
 # if your resource directory contains an image called `cover.(jpg|png|webp)`,
 # then the file will be used as a cover automatically.
@@ -31,7 +31,8 @@ autoCover = true
 
 # set post to show the last updated
 # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
-showLastUpdated = false
+showLastUpdated = true
+enableGitInfo = true
 
 # set a custom favicon (default is a `themeColor` square)
 # favicon = "favicon.ico"
@@ -43,7 +44,7 @@ showLastUpdated = false
 # oneHeadingSize = true # default
 
 # whether to show a page's estimated reading time
-# readingTime = false # default
+ readingTime = true # default
 
 # whether to show a table of contents
 # can be overridden in a page's front-matter
@@ -78,15 +79,19 @@ missingContentMessage = "Page not found..."
 missingBackButtonLabel = "Back to home page"
 
 [languages.en.params.logo]
-logoText = "Terminal"
-logoHomeLink = "/"
+logoText = "Powershell"
+logoHomeLink = "/powershell/"
 
 [languages.en.menu]
 [[languages.en.menu.main]]
-identifier = "about"
-name = "Test"
-url = "/test/test.md"
+identifier = "subjects"
+name = "Subjects"
+url = "/subjects"
 [[languages.en.menu.main]]
-identifier = "showcase"
-name = "Showcase"
-url = "/showcase"
+identifier = "scripts"
+name = "Scripts"
+url = "/scripts"
+[[languages.en.menu.main]]
+identifier = "writeups"
+name = "Write-ups"
+url = "writeups"
