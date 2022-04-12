@@ -45,9 +45,9 @@ help [Subject] -online  # Open the help documentation online, in the browser
 [Cmdlet] -?
 help *event*
 help Get-Event -Full  # Include all information on the subject at once
-help Get-Service -Examples   # Look at examples for the given command
-help Get-Service -Parameter ComputerName   # Look at information on specific parameter
-help gsv -ShowWindow   # Present the help information in a small window with search, selection and scrolling
+help Get-Service -Examples  # Look at examples for the given command
+help Get-Service -Parameter ComputerName  # Look at information on specific parameter
+help gsv -ShowWindow  # Present the help information in a small window with search, selection and scrolling
 Get-Command -Noun *event -Verb Get  # Find all Cmdlets that end with "Event" and use "Get" as their verbx
 gcm -Noun *event* -Type Cmdlet  # Find all Cmdlets that end with "Event"
 ```
