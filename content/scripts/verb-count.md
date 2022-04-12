@@ -1,12 +1,12 @@
 ---
 title: "Verb Counts"
-summary: A simple script to count up all of the verbs used by commands in PowerShell.
+summary: A simple script to count up all the verbs used by commands in PowerShell.
 ---
 
 This script uses the `Get-Verb` command to sum and provide the percentage of each verb in the Powershell environment.
 It prints a sorted table with both the individual verb's number of commands and what percentage it makes up.
 
-{{< code language="powershell" title="CountedVerbCommands.ps1" >}}
+{{< code language="powershell" title="CountedVerbs.ps1" >}}
 $counts = @{}
 $verbs = (Get-Verb).Verb
 $Start = (Get-Date)
