@@ -20,7 +20,7 @@ hugo serve
 but it will also automatically deploy to [xevion.github.io][website-url] when any commits hit `master`.
 
 [repo-url]: https://github.com/Xevion/powershell/
-[website-url]: https://xevion.github.io/powershell/
+[website-url]: https://powershell.xevion.dev/
 [license-url]: https://github.com/Xevion/powershell/blob/master/LICENSE
 [latest-url]: https://github.com/Xevion/powershell/commit/master
 
