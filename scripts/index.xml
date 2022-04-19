@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Powershell</title><link>https://xevion.github.io/powershell/scripts/</link><description>Recent content on Powershell</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Xevion (c) 2022</copyright><atom:link href="https://xevion.github.io/powershell/scripts/index.xml" rel="self" type="application/rss+xml"/><item><title>Verb Counts</title><link>https://xevion.github.io/powershell/scripts/verb-count/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://xevion.github.io/powershell/scripts/verb-count/</guid><description>A simple script to count up all the verbs used by commands in PowerShell.</description><content>&lt;p>This script uses the &lt;code>Get-Verb&lt;/code> command to sum and provide the percentage of each verb in the Powershell environment.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Powershell</title><link>https://powershell.xevion.dev/scripts/</link><description>Recent content on Powershell</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Xevion (c) 2022</copyright><atom:link href="https://powershell.xevion.dev/scripts/index.xml" rel="self" type="application/rss+xml"/><item><title>Verb Counts</title><link>https://powershell.xevion.dev/scripts/verb-count/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/scripts/verb-count/</guid><description>A simple script to count up all the verbs used by commands in PowerShell.</description><content>&lt;p>This script uses the &lt;code>Get-Verb&lt;/code> command to sum and provide the percentage of each verb in the Powershell environment.
 It prints a sorted table with both the individual verb&amp;rsquo;s number of commands and what percentage it makes up.&lt;/p>
 &lt;div class="collapsable-code">
-&lt;input id="231876549" type="checkbox" />
-&lt;label for="231876549">
+&lt;input id="958216743" type="checkbox" />
+&lt;label for="958216743">
 &lt;span class="collapsable-code__language">powershell&lt;/span>
 &lt;span class="collapsable-code__title">CountedVerbs.ps1&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
@@ -22,8 +22,8 @@ Write-Host &amp;#34;$($Sum) commands counted in $(($End - $Start).TotalMilliseco
 &lt;/div>
 &lt;p>Output, but modified to be in &lt;em>Descending&lt;/em> order.&lt;/p>
 &lt;div class="collapsable-code">
-&lt;input id="894123765" type="checkbox" checked />
-&lt;label for="894123765">
+&lt;input id="923658741" type="checkbox" checked />
+&lt;label for="923658741">
 &lt;span class="collapsable-code__language">plaintext&lt;/span>
 &lt;span class="collapsable-code__title">Output&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>

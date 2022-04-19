@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Powershell</title><link>https://xevion.github.io/powershell/</link><description>Recent content on Powershell</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Xevion (c) 2022</copyright><lastBuildDate>Tue, 19 Apr 2022 10:44:28 -0500</lastBuildDate><atom:link href="https://xevion.github.io/powershell/index.xml" rel="self" type="application/rss+xml"/><item><title>Help</title><link>https://xevion.github.io/powershell/posts/help/</link><pubDate>Tue, 19 Apr 2022 10:44:28 -0500</pubDate><guid>https://xevion.github.io/powershell/posts/help/</guid><description>Information on acquiring information about Cmdlets and using the help system effectively.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Powershell</title><link>https://powershell.xevion.dev/</link><description>Recent content on Powershell</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Xevion (c) 2022</copyright><lastBuildDate>Tue, 19 Apr 2022 10:44:28 -0500</lastBuildDate><atom:link href="https://powershell.xevion.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Help</title><link>https://powershell.xevion.dev/posts/help/</link><pubDate>Tue, 19 Apr 2022 10:44:28 -0500</pubDate><guid>https://powershell.xevion.dev/posts/help/</guid><description>Information on acquiring information about Cmdlets and using the help system effectively.
 To acquire information on a command or subject, use the Get-Help [Cmdlet] command. The man and help aliases are available, but note that they automatically pipe to More for improved viewing.
 You can use the -online flag to browse the help documentation online.
 In order to view documentation on commands, you will need to update documentation for powershell.</description><content>&lt;p>Information on acquiring information about Cmdlets and using the help system effectively.&lt;/p>
@@ -34,11 +34,11 @@ no external commands are returned (Only Cmdlets have &lt;em>nouns&lt;/em> or &lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help gsv -ShowWindow &lt;span style="color:#75715e"># Present the help information in a small window with search, selection and scrolling&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-Command -Noun *event -Verb Get &lt;span style="color:#75715e"># Find all Cmdlets that end with &amp;#34;Event&amp;#34; and use &amp;#34;Get&amp;#34; as their verbx&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gcm -Noun *event* -Type Cmdlet &lt;span style="color:#75715e"># Find all Cmdlets that end with &amp;#34;Event&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Verb Counts</title><link>https://xevion.github.io/powershell/scripts/verb-count/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://xevion.github.io/powershell/scripts/verb-count/</guid><description>A simple script to count up all the verbs used by commands in PowerShell.</description><content>&lt;p>This script uses the &lt;code>Get-Verb&lt;/code> command to sum and provide the percentage of each verb in the Powershell environment.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Verb Counts</title><link>https://powershell.xevion.dev/scripts/verb-count/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/scripts/verb-count/</guid><description>A simple script to count up all the verbs used by commands in PowerShell.</description><content>&lt;p>This script uses the &lt;code>Get-Verb&lt;/code> command to sum and provide the percentage of each verb in the Powershell environment.
 It prints a sorted table with both the individual verb&amp;rsquo;s number of commands and what percentage it makes up.&lt;/p>
 &lt;div class="collapsable-code">
-&lt;input id="231876549" type="checkbox" />
-&lt;label for="231876549">
+&lt;input id="958216743" type="checkbox" />
+&lt;label for="958216743">
 &lt;span class="collapsable-code__language">powershell&lt;/span>
 &lt;span class="collapsable-code__title">CountedVerbs.ps1&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
@@ -58,8 +58,8 @@ Write-Host &amp;#34;$($Sum) commands counted in $(($End - $Start).TotalMilliseco
 &lt;/div>
 &lt;p>Output, but modified to be in &lt;em>Descending&lt;/em> order.&lt;/p>
 &lt;div class="collapsable-code">
-&lt;input id="894123765" type="checkbox" checked />
-&lt;label for="894123765">
+&lt;input id="923658741" type="checkbox" checked />
+&lt;label for="923658741">
 &lt;span class="collapsable-code__language">plaintext&lt;/span>
 &lt;span class="collapsable-code__title">Output&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
