@@ -34,11 +34,75 @@ no external commands are returned (Only Cmdlets have &lt;em>nouns&lt;/em> or &lt
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help gsv -ShowWindow &lt;span style="color:#75715e"># Present the help information in a small window with search, selection and scrolling&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-Command -Noun *event -Verb Get &lt;span style="color:#75715e"># Find all Cmdlets that end with &amp;#34;Event&amp;#34; and use &amp;#34;Get&amp;#34; as their verbx&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gcm -Noun *event* -Type Cmdlet &lt;span style="color:#75715e"># Find all Cmdlets that end with &amp;#34;Event&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Verb Counts</title><link>https://powershell.xevion.dev/scripts/verb-count/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/scripts/verb-count/</guid><description>A simple script to count up all the verbs used by commands in PowerShell.</description><content>&lt;p>This script uses the &lt;code>Get-Verb&lt;/code> command to sum and provide the percentage of each verb in the Powershell environment.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Lab One</title><link>https://powershell.xevion.dev/labs/lab-one/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/labs/lab-one/</guid><description>My answers for Lab One</description><content>&lt;ol start="2">
+&lt;li>
+&lt;p>&lt;code>ConvertTo-Html&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Out-File&lt;/code> for redirecting output into a file. Use the Pipe operator or the &lt;code>InputObject&lt;/code> parameter for the input.
+&lt;code>Out-Printer&lt;/code> is exactly the same as above, but is used for outputting to a printer.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>5 Cmdlets are available.&lt;/p>
+&lt;p>&lt;code>Get-Command -Noun Process&lt;/code> will show you these processes.&lt;/p>
+&lt;p>To get the specific number, &lt;code>(Get-Command -Noun Process).Count&lt;/code> is available, revealing 5 Process handling Cmdlets.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Write-EventLog&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>5 commands are available.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Export-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>Import-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>New-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>Set-Alias&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Start-Transcript&lt;/code> and &lt;code>Stop-Transcript&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>-Newest&lt;/code> parameter.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>Get-Service&lt;/code> Cmdlet lets one retrieve a list of services and access remote computers via the &lt;code>-ComputerName&lt;/code> parameter.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>Get-Process&lt;/code> Cmdlet lets one retrieve a list of running processes on computers, including remote computers via the &lt;code>-ComputerName&lt;/code> parameter.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>-Width&lt;/code> parameter lets one resize it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>-NoClobber&lt;/code> parameter ensures that the &lt;code>Out-File&lt;/code> Cmdlet will not overwrite any existing files.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>Get-Alias&lt;/code> command.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>ps -C Server1&lt;/code> is the shortest possible, using the &lt;code>ps&lt;/code> alias and the &lt;code>-ComputerName&lt;/code> parameter, which at shortest uses only 2 characters; the hyphen and the first character in the parameter&amp;rsquo;s name, &lt;code>C&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>This can be counted quickly via &lt;code>(gcm -Noun Object).Count&lt;/code> which yields &lt;strong>9&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>about_Arrays&lt;/code> topic, accessible via &lt;code>help about_Arrays&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ol></content></item><item><title>Lab Two</title><link>https://powershell.xevion.dev/labs/lab-two/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/labs/lab-two/</guid><description>My answers for Lab Two</description><content>&lt;ol>
+&lt;li>&lt;code>Get-Process&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-WinEvent Application -MaxEvent 100&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-Command -CommandType Cmdlet&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>New-Alias np notepad.exe&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-Service M*&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-NetFirewallRule -Direction Inbound&lt;/code>&lt;/li>
+&lt;/ol></content></item><item><title>Verb Counts</title><link>https://powershell.xevion.dev/scripts/verb-count/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/scripts/verb-count/</guid><description>A simple script to count up all the verbs used by commands in PowerShell.</description><content>&lt;p>This script uses the &lt;code>Get-Verb&lt;/code> command to sum and provide the percentage of each verb in the Powershell environment.
 It prints a sorted table with both the individual verb&amp;rsquo;s number of commands and what percentage it makes up.&lt;/p>
 &lt;div class="collapsable-code">
-&lt;input id="983412675" type="checkbox" />
-&lt;label for="983412675">
+&lt;input id="956273481" type="checkbox" />
+&lt;label for="956273481">
 &lt;span class="collapsable-code__language">powershell&lt;/span>
 &lt;span class="collapsable-code__title">CountedVerbs.ps1&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
@@ -58,8 +122,8 @@ Write-Host &amp;#34;$($Sum) commands counted in $(($End - $Start).TotalMilliseco
 &lt;/div>
 &lt;p>Output, but modified to be in &lt;em>Descending&lt;/em> order.&lt;/p>
 &lt;div class="collapsable-code">
-&lt;input id="248176935" type="checkbox" checked />
-&lt;label for="248176935">
+&lt;input id="146937825" type="checkbox" checked />
+&lt;label for="146937825">
 &lt;span class="collapsable-code__language">plaintext&lt;/span>
 &lt;span class="collapsable-code__title">Output&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>

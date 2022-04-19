@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Labs on Powershell</title><link>https://powershell.xevion.dev/labs/</link><description>Recent content in Labs on Powershell</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Xevion (c) 2022</copyright><atom:link href="https://powershell.xevion.dev/labs/index.xml" rel="self" type="application/rss+xml"/><item><title>Lab One</title><link>https://powershell.xevion.dev/labs/lab-one/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/labs/lab-one/</guid><description>My answers for Lab One</description><content>&lt;ol start="2">
+&lt;li>
+&lt;p>&lt;code>ConvertTo-Html&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Out-File&lt;/code> for redirecting output into a file. Use the Pipe operator or the &lt;code>InputObject&lt;/code> parameter for the input.
+&lt;code>Out-Printer&lt;/code> is exactly the same as above, but is used for outputting to a printer.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>5 Cmdlets are available.&lt;/p>
+&lt;p>&lt;code>Get-Command -Noun Process&lt;/code> will show you these processes.&lt;/p>
+&lt;p>To get the specific number, &lt;code>(Get-Command -Noun Process).Count&lt;/code> is available, revealing 5 Process handling Cmdlets.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Write-EventLog&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>5 commands are available.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Export-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>Import-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>New-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>Set-Alias&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Start-Transcript&lt;/code> and &lt;code>Stop-Transcript&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>-Newest&lt;/code> parameter.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>Get-Service&lt;/code> Cmdlet lets one retrieve a list of services and access remote computers via the &lt;code>-ComputerName&lt;/code> parameter.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>Get-Process&lt;/code> Cmdlet lets one retrieve a list of running processes on computers, including remote computers via the &lt;code>-ComputerName&lt;/code> parameter.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>-Width&lt;/code> parameter lets one resize it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>-NoClobber&lt;/code> parameter ensures that the &lt;code>Out-File&lt;/code> Cmdlet will not overwrite any existing files.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>Get-Alias&lt;/code> command.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>ps -C Server1&lt;/code> is the shortest possible, using the &lt;code>ps&lt;/code> alias and the &lt;code>-ComputerName&lt;/code> parameter, which at shortest uses only 2 characters; the hyphen and the first character in the parameter&amp;rsquo;s name, &lt;code>C&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>This can be counted quickly via &lt;code>(gcm -Noun Object).Count&lt;/code> which yields &lt;strong>9&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>about_Arrays&lt;/code> topic, accessible via &lt;code>help about_Arrays&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ol></content></item><item><title>Lab Two</title><link>https://powershell.xevion.dev/labs/lab-two/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/labs/lab-two/</guid><description>My answers for Lab Two</description><content>&lt;ol>
+&lt;li>&lt;code>Get-Process&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-WinEvent Application -MaxEvent 100&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-Command -CommandType Cmdlet&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>New-Alias np notepad.exe&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-Service M*&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-NetFirewallRule -Direction Inbound&lt;/code>&lt;/li>
+&lt;/ol></content></item></channel></rss>
