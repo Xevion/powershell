@@ -1,104 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Powershell</title><link>https://powershell.xevion.dev/</link><description>Recent content on Powershell</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Xevion (c) 2022</copyright><lastBuildDate>Tue, 19 Apr 2022 10:44:28 -0500</lastBuildDate><atom:link href="https://powershell.xevion.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Help</title><link>https://powershell.xevion.dev/posts/help/</link><pubDate>Tue, 19 Apr 2022 10:44:28 -0500</pubDate><guid>https://powershell.xevion.dev/posts/help/</guid><description>Information on acquiring information about Cmdlets and using the help system effectively.
-To acquire information on a command or subject, use the Get-Help [Cmdlet] command. The man and help aliases are available, but note that they automatically pipe to More for improved viewing.
-You can use the -online flag to browse the help documentation online.
-In order to view documentation on commands, you will need to update documentation for powershell.</description><content>&lt;p>Information on acquiring information about Cmdlets and using the help system effectively.&lt;/p>
-&lt;hr>
-&lt;p>To acquire information on a command or subject, use the &lt;code>Get-Help [Cmdlet]&lt;/code> command. The &lt;code>man&lt;/code> and &lt;code>help&lt;/code> aliases are available, but note that
-they automatically pipe to &lt;code>More&lt;/code> for improved viewing.&lt;/p>
-&lt;p>You can use the &lt;code>-online&lt;/code> flag to browse the help documentation online.&lt;/p>
-&lt;blockquote>
-&lt;p>In order to view documentation on commands, you will need to update documentation for powershell.
-This can easily be done using &lt;code>Update-Help&lt;/code>, but you need to be running in administrator to do this.
-I personally recommend using &lt;code>-Force&lt;/code> to &amp;lsquo;assist&amp;rsquo; some modules into updating.&lt;/p>
-&lt;/blockquote>
-&lt;p>Note that there are options for updating help, take a look at &lt;code>Save-Help&lt;/code> and &lt;code>Update-Help -SourcePath&lt;/code> to do this.&lt;/p>
-&lt;h3 id="finding-commands">Finding Commands&lt;/h3>
-&lt;p>In the search for a specific command, you can use &lt;em>wildcards&lt;/em> to make it easy. The wildcard character matches
-searches for 0 or more characters; thus if you place &lt;code>*&lt;/code> in front of &lt;code>event&lt;/code> and search for it: &lt;code>help *event&lt;/code>,
-you&amp;rsquo;ll find it matching anything that ends with &lt;code>event&lt;/code> in the subject&amp;rsquo;s name, regardless of what comes before it.&lt;/p>
-&lt;p>However, &lt;code>Get-Help&lt;/code> searches for &lt;em>help topics&lt;/em>, &lt;em>modules&lt;/em> that may or may not exist for every command (while they most likely do, it&amp;rsquo;s not 100%).
-Furthermore, your results could be polluted by topics you aren&amp;rsquo;t interested in; if you strictly want commands, &lt;code>Get-Command&lt;/code> is your friend.&lt;/p>
-&lt;p>Do note though: while &lt;code>Get-Command&lt;/code> supports wildcard, you should use the &lt;code>-Noun&lt;/code> and &lt;code>-Verb&lt;/code> parameters to make sure
-no external commands are returned (Only Cmdlets have &lt;em>nouns&lt;/em> or &lt;em>verbs&lt;/em>). Another way is with the &lt;code>-Type&lt;/code> parameter, (i.e. &lt;code>-Type Cmdlet&lt;/code>).&lt;/p>
-&lt;h3 id="potential-usages">Potential Usages&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>Get-Help &lt;span style="color:#66d9ef">[Subject]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help &lt;span style="color:#66d9ef">[Subject]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>man &lt;span style="color:#66d9ef">[Subject]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-Help &lt;span style="color:#66d9ef">[Subject]&lt;/span> | More
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help &lt;span style="color:#66d9ef">[Subject]&lt;/span> -online &lt;span style="color:#75715e"># Open the help documentation online, in the browser &lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[Cmdlet]&lt;/span> -?
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help *event*
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help Get-Event -Full &lt;span style="color:#75715e"># Include all information on the subject at once&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help Get-Service -Examples &lt;span style="color:#75715e"># Look at examples for the given command&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help Get-Service -Parameter ComputerName &lt;span style="color:#75715e"># Look at information on specific parameter&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help gsv -ShowWindow &lt;span style="color:#75715e"># Present the help information in a small window with search, selection and scrolling&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-Command -Noun *event -Verb Get &lt;span style="color:#75715e"># Find all Cmdlets that end with &amp;#34;Event&amp;#34; and use &amp;#34;Get&amp;#34; as their verbx&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gcm -Noun *event* -Type Cmdlet &lt;span style="color:#75715e"># Find all Cmdlets that end with &amp;#34;Event&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Lab One</title><link>https://powershell.xevion.dev/labs/lab-one/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/labs/lab-one/</guid><description>My answers for Lab One</description><content>&lt;ol start="2">
-&lt;li>
-&lt;p>&lt;code>ConvertTo-Html&lt;/code>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>Out-File&lt;/code> for redirecting output into a file. Use the Pipe operator or the &lt;code>InputObject&lt;/code> parameter for the input.
-&lt;code>Out-Printer&lt;/code> is exactly the same as above, but is used for outputting to a printer.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>5 Cmdlets are available.&lt;/p>
-&lt;p>&lt;code>Get-Command -Noun Process&lt;/code> will show you these processes.&lt;/p>
-&lt;p>To get the specific number, &lt;code>(Get-Command -Noun Process).Count&lt;/code> is available, revealing 5 Process handling Cmdlets.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>Write-EventLog&lt;/code>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>5 commands are available.&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>Export-Alias&lt;/code>&lt;/li>
-&lt;li>&lt;code>Get-Alias&lt;/code>&lt;/li>
-&lt;li>&lt;code>Import-Alias&lt;/code>&lt;/li>
-&lt;li>&lt;code>New-Alias&lt;/code>&lt;/li>
-&lt;li>&lt;code>Set-Alias&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>Start-Transcript&lt;/code> and &lt;code>Stop-Transcript&lt;/code>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The &lt;code>-Newest&lt;/code> parameter.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The &lt;code>Get-Service&lt;/code> Cmdlet lets one retrieve a list of services and access remote computers via the &lt;code>-ComputerName&lt;/code> parameter.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The &lt;code>Get-Process&lt;/code> Cmdlet lets one retrieve a list of running processes on computers, including remote computers via the &lt;code>-ComputerName&lt;/code> parameter.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The &lt;code>-Width&lt;/code> parameter lets one resize it.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The &lt;code>-NoClobber&lt;/code> parameter ensures that the &lt;code>Out-File&lt;/code> Cmdlet will not overwrite any existing files.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The &lt;code>Get-Alias&lt;/code> command.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;code>ps -C Server1&lt;/code> is the shortest possible, using the &lt;code>ps&lt;/code> alias and the &lt;code>-ComputerName&lt;/code> parameter, which at shortest uses only 2 characters; the hyphen and the first character in the parameter&amp;rsquo;s name, &lt;code>C&lt;/code>.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>This can be counted quickly via &lt;code>(gcm -Noun Object).Count&lt;/code> which yields &lt;strong>9&lt;/strong>.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The &lt;code>about_Arrays&lt;/code> topic, accessible via &lt;code>help about_Arrays&lt;/code>.&lt;/p>
-&lt;/li>
-&lt;/ol></content></item><item><title>Lab Two</title><link>https://powershell.xevion.dev/labs/lab-two/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/labs/lab-two/</guid><description>My answers for Lab Two</description><content>&lt;ol>
-&lt;li>&lt;code>Get-Process&lt;/code>&lt;/li>
-&lt;li>&lt;code>Get-WinEvent Application -MaxEvent 100&lt;/code>&lt;/li>
-&lt;li>&lt;code>Get-Command -CommandType Cmdlet&lt;/code>&lt;/li>
-&lt;li>&lt;code>Get-Alias&lt;/code>&lt;/li>
-&lt;li>&lt;code>New-Alias np notepad.exe&lt;/code>&lt;/li>
-&lt;li>&lt;code>Get-Service M*&lt;/code>&lt;/li>
-&lt;li>&lt;code>Get-NetFirewallRule -Direction Inbound&lt;/code>&lt;/li>
-&lt;/ol></content></item><item><title>Part 1 Exercises</title><link>https://powershell.xevion.dev/exercises/part-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/exercises/part-1/</guid><description>All 10 exercises &amp;amp; my solutions in Part 1.</description><content>&lt;h3 id="exercise-1">Exercise 1&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Powershell</title><link>https://powershell.xevion.dev/</link><description>Recent content on Powershell</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Xevion (c) 2022</copyright><lastBuildDate>Wed, 20 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://powershell.xevion.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Part 1 Exercises</title><link>https://powershell.xevion.dev/exercises/part-1/</link><pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/exercises/part-1/</guid><description>All 25 exercises &amp;amp; my solutions in Part 1.</description><content>&lt;h3 id="exercise-1">Exercise 1&lt;/h3>
 &lt;p>Get all services where the display name begins with ‘Windows’.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>Get-Service -DisplayName Windows*
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="exercise-2">Exercise 2&lt;/h3>
@@ -212,11 +112,114 @@ truncated go away.&lt;/p>
 the &lt;code>CommonTCPPort&lt;/code> parameter, which I can&amp;rsquo;t find any information on.&lt;/p>
 &lt;p>Instead, given that we only need to know about open ports running on the local computer, we can simply gather all open listening
 connections on the computer and see if Port &lt;code>80&lt;/code> is among them. I tested it against port &lt;code>4884&lt;/code> which is running my
-local Hugo instance, and it worked for both commands above.&lt;/p></content></item><item><title>Verb Counts</title><link>https://powershell.xevion.dev/scripts/verb-count/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/scripts/verb-count/</guid><description>A simple script to count up all the verbs used by commands in PowerShell.</description><content>&lt;p>This script uses the &lt;code>Get-Verb&lt;/code> command to sum and provide the percentage of each verb in the Powershell environment.
+local Hugo instance, and it worked for both commands above.&lt;/p></content></item><item><title>Help</title><link>https://powershell.xevion.dev/posts/help/</link><pubDate>Tue, 19 Apr 2022 10:44:28 -0500</pubDate><guid>https://powershell.xevion.dev/posts/help/</guid><description>Information on acquiring information about Cmdlets and using the help system effectively.
+To acquire information on a command or subject, use the Get-Help [Cmdlet] command. The man and help aliases are available, but note that they automatically pipe to More for improved viewing.
+You can use the -online flag to browse the help documentation online.
+In order to view documentation on commands, you will need to update documentation for powershell.</description><content>&lt;p>Information on acquiring information about Cmdlets and using the help system effectively.&lt;/p>
+&lt;hr>
+&lt;p>To acquire information on a command or subject, use the &lt;code>Get-Help [Cmdlet]&lt;/code> command. The &lt;code>man&lt;/code> and &lt;code>help&lt;/code> aliases are available, but note that
+they automatically pipe to &lt;code>More&lt;/code> for improved viewing.&lt;/p>
+&lt;p>You can use the &lt;code>-online&lt;/code> flag to browse the help documentation online.&lt;/p>
+&lt;blockquote>
+&lt;p>In order to view documentation on commands, you will need to update documentation for powershell.
+This can easily be done using &lt;code>Update-Help&lt;/code>, but you need to be running in administrator to do this.
+I personally recommend using &lt;code>-Force&lt;/code> to &amp;lsquo;assist&amp;rsquo; some modules into updating.&lt;/p>
+&lt;/blockquote>
+&lt;p>Note that there are options for updating help, take a look at &lt;code>Save-Help&lt;/code> and &lt;code>Update-Help -SourcePath&lt;/code> to do this.&lt;/p>
+&lt;h3 id="finding-commands">Finding Commands&lt;/h3>
+&lt;p>In the search for a specific command, you can use &lt;em>wildcards&lt;/em> to make it easy. The wildcard character matches
+searches for 0 or more characters; thus if you place &lt;code>*&lt;/code> in front of &lt;code>event&lt;/code> and search for it: &lt;code>help *event&lt;/code>,
+you&amp;rsquo;ll find it matching anything that ends with &lt;code>event&lt;/code> in the subject&amp;rsquo;s name, regardless of what comes before it.&lt;/p>
+&lt;p>However, &lt;code>Get-Help&lt;/code> searches for &lt;em>help topics&lt;/em>, &lt;em>modules&lt;/em> that may or may not exist for every command (while they most likely do, it&amp;rsquo;s not 100%).
+Furthermore, your results could be polluted by topics you aren&amp;rsquo;t interested in; if you strictly want commands, &lt;code>Get-Command&lt;/code> is your friend.&lt;/p>
+&lt;p>Do note though: while &lt;code>Get-Command&lt;/code> supports wildcard, you should use the &lt;code>-Noun&lt;/code> and &lt;code>-Verb&lt;/code> parameters to make sure
+no external commands are returned (Only Cmdlets have &lt;em>nouns&lt;/em> or &lt;em>verbs&lt;/em>). Another way is with the &lt;code>-Type&lt;/code> parameter, (i.e. &lt;code>-Type Cmdlet&lt;/code>).&lt;/p>
+&lt;h3 id="potential-usages">Potential Usages&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>Get-Help &lt;span style="color:#66d9ef">[Subject]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help &lt;span style="color:#66d9ef">[Subject]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>man &lt;span style="color:#66d9ef">[Subject]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-Help &lt;span style="color:#66d9ef">[Subject]&lt;/span> | More
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help &lt;span style="color:#66d9ef">[Subject]&lt;/span> -online &lt;span style="color:#75715e"># Open the help documentation online, in the browser &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[Cmdlet]&lt;/span> -?
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help *event*
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help Get-Event -Full &lt;span style="color:#75715e"># Include all information on the subject at once&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help Get-Service -Examples &lt;span style="color:#75715e"># Look at examples for the given command&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help Get-Service -Parameter ComputerName &lt;span style="color:#75715e"># Look at information on specific parameter&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>help gsv -ShowWindow &lt;span style="color:#75715e"># Present the help information in a small window with search, selection and scrolling&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-Command -Noun *event -Verb Get &lt;span style="color:#75715e"># Find all Cmdlets that end with &amp;#34;Event&amp;#34; and use &amp;#34;Get&amp;#34; as their verbx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gcm -Noun *event* -Type Cmdlet &lt;span style="color:#75715e"># Find all Cmdlets that end with &amp;#34;Event&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Lab One</title><link>https://powershell.xevion.dev/labs/lab-one/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/labs/lab-one/</guid><description>My answers for Lab One</description><content>&lt;ol>
+&lt;li>
+&lt;p>N/A&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>ConvertTo-Html&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Out-File&lt;/code> for redirecting output into a file. Use the Pipe operator or the &lt;code>InputObject&lt;/code> parameter for the input.
+&lt;code>Out-Printer&lt;/code> is exactly the same as above, but is used for outputting to a printer.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>5 Cmdlets are available.&lt;/p>
+&lt;p>&lt;code>Get-Command -Noun Process&lt;/code> will show you these processes.&lt;/p>
+&lt;p>To get the specific number, &lt;code>(Get-Command -Noun Process).Count&lt;/code> is available, revealing 5 Process handling Cmdlets.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Write-EventLog&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>5 commands are available.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Export-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>Import-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>New-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>Set-Alias&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>Start-Transcript&lt;/code> and &lt;code>Stop-Transcript&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>-Newest&lt;/code> parameter.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>Get-Service&lt;/code> Cmdlet lets one retrieve a list of services and access remote computers via the &lt;code>-ComputerName&lt;/code> parameter.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>Get-Process&lt;/code> Cmdlet lets one retrieve a list of running processes on computers, including remote computers via the &lt;code>-ComputerName&lt;/code> parameter.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>-Width&lt;/code> parameter lets one resize it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>-NoClobber&lt;/code> parameter ensures that the &lt;code>Out-File&lt;/code> Cmdlet will not overwrite any existing files.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>Get-Alias&lt;/code> command.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>ps -C Server1&lt;/code> is the shortest possible, using the &lt;code>ps&lt;/code> alias and the &lt;code>-ComputerName&lt;/code> parameter, which at shortest uses only 2 characters; the hyphen and the first character in the parameter&amp;rsquo;s name, &lt;code>C&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>This can be counted quickly via &lt;code>(gcm -Noun Object).Count&lt;/code> which yields &lt;strong>9&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The &lt;code>about_Arrays&lt;/code> topic, accessible via &lt;code>help about_Arrays&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ol></content></item><item><title>Lab Two</title><link>https://powershell.xevion.dev/labs/lab-two/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/labs/lab-two/</guid><description>My answers for Lab Two</description><content>&lt;ol>
+&lt;li>&lt;code>Get-Process&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-WinEvent Application -MaxEvent 100&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-Command -CommandType Cmdlet&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-Alias&lt;/code>&lt;/li>
+&lt;li>&lt;code>New-Alias np notepad.exe&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-Service M*&lt;/code>&lt;/li>
+&lt;li>&lt;code>Get-NetFirewallRule -Direction Inbound&lt;/code>&lt;/li>
+&lt;/ol></content></item><item><title>Verb Counts</title><link>https://powershell.xevion.dev/scripts/verb-count/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/scripts/verb-count/</guid><description>A simple script to count up all the verbs used by commands in PowerShell.</description><content>&lt;p>This script uses the &lt;code>Get-Verb&lt;/code> command to sum and provide the percentage of each verb in the Powershell environment.
 It prints a sorted table with both the individual verb&amp;rsquo;s number of commands and what percentage it makes up.&lt;/p>
 &lt;div class="collapsable-code">
-&lt;input id="319657284" type="checkbox" />
-&lt;label for="319657284">
+&lt;input id="549831762" type="checkbox" />
+&lt;label for="549831762">
 &lt;span class="collapsable-code__language">powershell&lt;/span>
 &lt;span class="collapsable-code__title">CountedVerbs.ps1&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
@@ -236,8 +239,8 @@ Write-Host &amp;#34;$($Sum) commands counted in $(($End - $Start).TotalMilliseco
 &lt;/div>
 &lt;p>Output, but modified to be in &lt;em>Descending&lt;/em> order.&lt;/p>
 &lt;div class="collapsable-code">
-&lt;input id="926571483" type="checkbox" checked />
-&lt;label for="926571483">
+&lt;input id="694527813" type="checkbox" checked />
+&lt;label for="694527813">
 &lt;span class="collapsable-code__language">plaintext&lt;/span>
 &lt;span class="collapsable-code__title">Output&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>

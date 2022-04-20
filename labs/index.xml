@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Labs on Powershell</title><link>https://powershell.xevion.dev/labs/</link><description>Recent content in Labs on Powershell</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Xevion (c) 2022</copyright><atom:link href="https://powershell.xevion.dev/labs/index.xml" rel="self" type="application/rss+xml"/><item><title>Lab One</title><link>https://powershell.xevion.dev/labs/lab-one/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/labs/lab-one/</guid><description>My answers for Lab One</description><content>&lt;ol start="2">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Labs on Powershell</title><link>https://powershell.xevion.dev/labs/</link><description>Recent content in Labs on Powershell</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Xevion (c) 2022</copyright><lastBuildDate>Tue, 19 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://powershell.xevion.dev/labs/index.xml" rel="self" type="application/rss+xml"/><item><title>Lab One</title><link>https://powershell.xevion.dev/labs/lab-one/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/labs/lab-one/</guid><description>My answers for Lab One</description><content>&lt;ol>
+&lt;li>
+&lt;p>N/A&lt;/p>
+&lt;/li>
 &lt;li>
 &lt;p>&lt;code>ConvertTo-Html&lt;/code>&lt;/p>
 &lt;/li>
@@ -54,7 +57,7 @@
 &lt;li>
 &lt;p>The &lt;code>about_Arrays&lt;/code> topic, accessible via &lt;code>help about_Arrays&lt;/code>.&lt;/p>
 &lt;/li>
-&lt;/ol></content></item><item><title>Lab Two</title><link>https://powershell.xevion.dev/labs/lab-two/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/labs/lab-two/</guid><description>My answers for Lab Two</description><content>&lt;ol>
+&lt;/ol></content></item><item><title>Lab Two</title><link>https://powershell.xevion.dev/labs/lab-two/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/labs/lab-two/</guid><description>My answers for Lab Two</description><content>&lt;ol>
 &lt;li>&lt;code>Get-Process&lt;/code>&lt;/li>
 &lt;li>&lt;code>Get-WinEvent Application -MaxEvent 100&lt;/code>&lt;/li>
 &lt;li>&lt;code>Get-Command -CommandType Cmdlet&lt;/code>&lt;/li>
