@@ -13,7 +13,7 @@ contentTypeName = "posts"
 themeColor = "blue"
 
 # if you set this to 0, only submenu trigger will be visible
-showMenuItems = 4
+showMenuItems = 5
 
 # show selector to switch language
 showLanguageSelector = false
@@ -84,18 +84,27 @@ logoHomeLink = "/"
 
 [languages.en.menu]
 [[languages.en.menu.main]]
+identifier = "exercises"
+name = "Exercises"
+url = "/exercises"
+weight = 5
+[[languages.en.menu.main]]
 identifier = "labs"
 name = "Labs"
 url = "/labs"
+weight = 4
 [[languages.en.menu.main]]
 identifier = "writeups"
 name = "Write-ups"
 url = "/writeups"
+weight = 3
 [[languages.en.menu.main]]
 identifier = "scripts"
 name = "Scripts"
 url = "/scripts"
+weight = 2
 [[languages.en.menu.main]]
 identifier = "subjects"
 name = "Subjects"
 url = "/posts"
+weight = 1
