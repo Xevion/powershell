@@ -1,6 +1,7 @@
 +++
 title = "Part 1 Exercises"
-summary = "All 10 exercises & my solutions in Part 1."
+summary = "All 25 exercises & my solutions in Part 1."
+date = 2022-04-20
 +++
 
 ### Exercise 1

@@ -1,7 +1,7 @@
 +++
 title = "Lab Two"
 summary = "My answers for Lab Two"
-date = "04/19/2022"
+date = 2022-04-19
 +++
 
 1. `Get-Process`

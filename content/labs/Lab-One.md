@@ -1,8 +1,10 @@
 +++
 title = "Lab One"
 summary = "My answers for Lab One"
-date = "04/19/2022"
+date = 2022-04-19
 +++
+
+1. N/A
 
 2. `ConvertTo-Html`
 
