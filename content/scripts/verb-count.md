@@ -1,6 +1,7 @@
 ---
 title: "Verb Counts"
 summary: A simple script to count up all the verbs used by commands in PowerShell.
+date: 2022-04-19
 ---
 
 This script uses the `Get-Verb` command to sum and provide the percentage of each verb in the Powershell environment.
