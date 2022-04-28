@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Powershell</title><link>https://powershell.xevion.dev/</link><description>Recent content on Powershell</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Xevion (c) 2022</copyright><lastBuildDate>Wed, 20 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://powershell.xevion.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Part 1 Exercises</title><link>https://powershell.xevion.dev/exercises/part-1/</link><pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/exercises/part-1/</guid><description>All 25 exercises &amp;amp; my solutions in Part 1.</description><content>&lt;h3 id="exercise-1">Exercise 1&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Powershell</title><link>https://powershell.xevion.dev/</link><description>Recent content on Powershell</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>Xevion (c) 2022</copyright><lastBuildDate>Thu, 28 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://powershell.xevion.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Dangling Process Closer</title><link>https://powershell.xevion.dev/scripts/force-close/</link><pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/scripts/force-close/</guid><description>A simple script for Firebase Emulators to close dangling processes.</description><content>&lt;p>This script was developed while building a Firebase app that had a local emulator run. Often, this emulator
+would freeze up and not close properly, so opening up a Task Manager (I used &lt;em>Process Hacker&lt;/em> because it&amp;rsquo;s easier) and
+manually close the dangling &lt;code>java.exe&lt;/code> process.&lt;/p>
+&lt;p>This became so common and disruptive that I created a little script to find and kill the process for me.&lt;/p>
+&lt;p>It&amp;rsquo;s not that big of a deal, but I gotta add content to this site, so why not&amp;hellip;&lt;/p>
+&lt;p>Raw file available at &lt;a href="https://powershell.xevion.dev/scripts/ForceClose.ps1"> https://powershell.xevion.dev/scripts/ForceClose.ps1 &lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">param&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">[Int32]&lt;/span>$targetPort = &lt;span style="color:#e6db74">&amp;#34;8080&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">[string]&lt;/span>$processName = &lt;span style="color:#e6db74">&amp;#34;java&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> Pluralize($value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> ($value &lt;span style="color:#f92672">-eq&lt;/span> 1)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;s&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$connections = Get-NetTCPConnection -state Listen -LocalPort $targetPort -ErrorAction &lt;span style="color:#e6db74">&amp;#39;SilentlyContinue&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> ($connections.Length &lt;span style="color:#f92672">-eq&lt;/span> 0)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Write-Host &lt;span style="color:#e6db74">&amp;#34;No ports were open and listening on ${targetPort}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>} &lt;span style="color:#66d9ef">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $processes = $connections | % { Get-Process -Id $_.OwningProcess } | ? { $_.Name &lt;span style="color:#f92672">-like&lt;/span> $processName }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $processCount = $processes.Length
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Write-Host &lt;span style="color:#e6db74">&amp;#34;Closing ${processCount} process${processCount | Pluralize} open on ${targetPort}...&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> $processes |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Stop-Process -Force -PassThru |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> select -Property Name, ProcessName, StartTime, HasExited, ExitTime |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Format-List
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Part 1 Exercises</title><link>https://powershell.xevion.dev/exercises/part-1/</link><pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/exercises/part-1/</guid><description>All 25 exercises &amp;amp; my solutions in Part 1.</description><content>&lt;h3 id="exercise-1">Exercise 1&lt;/h3>
 &lt;p>Get all services where the display name begins with ‘Windows’.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>Get-Service -DisplayName Windows*
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="exercise-2">Exercise 2&lt;/h3>
@@ -222,11 +261,11 @@ no external commands are returned (Only Cmdlets have &lt;em>nouns&lt;/em> or &lt
 &lt;li>&lt;code>New-Alias np notepad.exe&lt;/code>&lt;/li>
 &lt;li>&lt;code>Get-Service M*&lt;/code>&lt;/li>
 &lt;li>&lt;code>Get-NetFirewallRule -Direction Inbound&lt;/code>&lt;/li>
-&lt;/ol></content></item><item><title>Verb Counts</title><link>https://powershell.xevion.dev/scripts/verb-count/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/scripts/verb-count/</guid><description>A simple script to count up all the verbs used by commands in PowerShell.</description><content>&lt;p>This script uses the &lt;code>Get-Verb&lt;/code> command to sum and provide the percentage of each verb in the Powershell environment.
+&lt;/ol></content></item><item><title>Verb Counts</title><link>https://powershell.xevion.dev/scripts/verb-count/</link><pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate><guid>https://powershell.xevion.dev/scripts/verb-count/</guid><description>A simple script to count up all the verbs used by commands in PowerShell.</description><content>&lt;p>This script uses the &lt;code>Get-Verb&lt;/code> command to sum and provide the percentage of each verb in the Powershell environment.
 It prints a sorted table with both the individual verb&amp;rsquo;s number of commands and what percentage it makes up.&lt;/p>
 &lt;div class="collapsable-code">
-&lt;input id="186257349" type="checkbox" />
-&lt;label for="186257349">
+&lt;input id="953267814" type="checkbox" />
+&lt;label for="953267814">
 &lt;span class="collapsable-code__language">powershell&lt;/span>
 &lt;span class="collapsable-code__title">CountedVerbs.ps1&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
@@ -246,8 +285,8 @@ Write-Host &amp;#34;$($Sum) commands counted in $(($End - $Start).TotalMilliseco
 &lt;/div>
 &lt;p>Output, but modified to be in &lt;em>Descending&lt;/em> order.&lt;/p>
 &lt;div class="collapsable-code">
-&lt;input id="421967835" type="checkbox" checked />
-&lt;label for="421967835">
+&lt;input id="192648573" type="checkbox" checked />
+&lt;label for="192648573">
 &lt;span class="collapsable-code__language">plaintext&lt;/span>
 &lt;span class="collapsable-code__title">Output&lt;/span>
 &lt;span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽">&lt;/span>
