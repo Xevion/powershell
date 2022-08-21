@@ -1,8 +1,8 @@
 +++
-title = "Help"
+title = "The Help System"
 date = "2022-04-19T10:44:28-05:00"
 author = "Xevion"
-description = "Stuck? Lost? Not sure how to find anything out? Find out here."
+description = "Stuck? Lost? Not sure how to find anything out? The help system is an effective way to find out what you need to know."
 +++
 
 Information on acquiring information about Cmdlets and using the help system effectively.
