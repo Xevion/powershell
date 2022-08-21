@@ -3,6 +3,14 @@ languageCode = 'en-us'
 title = 'Powershell by Xevion'
 paginate = 5
 theme = 'terminal'
+enableGitInfo = true
+
+[frontmatter]
+date = ["date", "publishDate", "lastmod"]
+lastmod = ["lastmod", ":git", "date", "publishDate"]
+publishDate = ["publishDate", "date"]
+expiryDate = ["expiryDate"]
+
 
 [params]
 # dir name of your main content (default is `content/posts`).
@@ -20,6 +28,7 @@ showLanguageSelector = false
 
 # set theme to full screen width
 fullWidthTheme = false
+
 
 # center theme with default width
 centerTheme = true
