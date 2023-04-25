@@ -1,4 +1,3 @@
-baseURL = 'https://powershell.xevion.dev/'
 languageCode = 'en-us'
 title = 'Powershell by Xevion'
 paginate = 5
